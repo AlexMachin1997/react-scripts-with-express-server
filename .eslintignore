@@ -1,0 +1,11 @@
+./README.md
+
+src/ServiceWorker/*.js
+
+node_modules/*
+
+*.test.js
+
+*.stories.js
+
+./.github/workflows/**/*.yml
