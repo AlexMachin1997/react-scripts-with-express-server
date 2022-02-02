@@ -4,30 +4,33 @@
 	"main": "index.js",
 	"license": "MIT",
 	"devDependencies": {
-		"eslint": "^7.11.0",
+		"concurrently": "^7.0.0",
+		"eslint": "^8.7.0",
 		"eslint-config-airbnb": "^19.0.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-import": "^2.25.3",
 		"eslint-plugin-jsx-a11y": "^6.5.1",
 		"eslint-plugin-prettier": "^4.0.0",
-		"eslint-plugin-react": "^7.27.0",
+		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
 		"eslint-webpack-plugin": "^3.0.1",
-		"prettier": "^2.4.1",
-		"concurrently": "^7.0.0"
+		"prettier": "^2.4.1"
 	},
 	"scripts": {
-		"eslint:client": "eslint ./client/src/**/*.js  --fix",
 		"prettier:client": "prettier --write ./client/src/**/*.js",
-		"eslint:server": "eslint ./server/**/**/*.js --fix",
 		"prettier:server": "prettier --write ./server/**/**/*.js",
-		"eslint:all": "yarn run eslint:client && eslint:server",
-		"prettier:all": "yarn run prettier:client && yarn run prettier:server",
+		"eslint:client": "eslint ./client/src/**/*.js  --fix",
+		"eslint:server": "eslint ./server/**/**/*.js --fix",
 		"client:build--prod": "cross-env NODE_ENV=production yarn --cwd ./client build",
 		"client:build--dev": "cross-env NODE_ENV=development yarn --cwd ./client start",
 		"server:build--prod": "cross-env NODE_ENV=production yarn --cwd ./server start",
 		"server:build--dev": "cross-env NODE_ENV=development yarn --cwd ./server start--nodemon",
 		"development": "concurrently \"yarn run server:build--dev \" \"yarn run client:build--dev\"",
-		"production": "yarn run client:build--prod && yarn run server:build--prod"
+		"production": "yarn run client:build--prod && yarn run server:build--prod",
+		"eslint:all": "yarn run eslint:client && yarn run eslint:server",
+		"prettier:all": "yarn run prettier:client && yarn run prettier:server"
+	},
+	"dependencies": {
+		"cross-env": "^7.0.3"
 	}
 }

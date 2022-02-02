@@ -12,7 +12,6 @@ module.exports = {
 		Atomics: 'readonly',
 		SharedArrayBuffer: 'readonly'
 	},
-	// parser: 'babel-eslint',
 	parserOptions: {
 		ecmaFeatures: {
 			jsx: true
@@ -38,6 +37,14 @@ module.exports = {
 		'no-irregular-whitespace': 'off',
 		'no-plusplus': 'off',
 		'react/jsx-props-no-spreading': 'off',
+		'react/function-component-definition': [
+			2,
+			{
+				namedComponents: 'arrow-function',
+				unnamedComponents: 'arrow-function'
+			}
+		],
+		'react/style-prop-object': 'off',
 		'no-debugger': 0,
 		'no-alert': 0,
 		'no-await-in-loop': 0,
