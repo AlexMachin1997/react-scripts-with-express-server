@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import useTodos from '../../hooks/useTodos';
 
-const Homepage = function () {
+const Homepage = () => {
 	// Get all of the todos available
 	const { status, todos } = useTodos();
 
@@ -20,7 +20,7 @@ const Homepage = function () {
 
 	return (
 		<>
-			<h1>Todo list</h1>
+			<h1>Awesome Todo list</h1>
 
 			<p>Click a "todo" to view the individual item</p>
 

@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 import useTodo from '../../hooks/useTodo';
 
-const Todo = function () {
+const Todo = () => {
 	// Access any page parameters
 	const { id } = useParams();
 

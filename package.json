@@ -17,12 +17,15 @@
 		"prettier": "^2.4.1"
 	},
 	"scripts": {
-		"prettier:client": "prettier --write ./client/src/**/*.js",
-		"prettier:server": "prettier --write ./server/**/**/*.js",
-		"eslint:client": "eslint ./client/src/**/*.js  --fix",
+		"client:start": "react-scripts start",
+		"client:build": "react-scripts build",
+		"client:test": "react-scripts test",
+		"prettier:client": "prettier --write ./src/**/*.jsx",
+		"prettier:server": "prettier --write ./server/**/**/*.jsx",
+		"eslint:client": "eslint ./src/**/*.js  --fix",
 		"eslint:server": "eslint ./server/**/**/*.js --fix",
-		"client:build--prod": "cross-env NODE_ENV=production yarn --cwd ./client build",
-		"client:build--dev": "cross-env NODE_ENV=development yarn --cwd ./client start",
+		"client:build--prod": "cross-env NODE_ENV=production yarn run client:build",
+		"client:build--dev": "cross-env NODE_ENV=development yarn run client:start",
 		"server:build--prod": "cross-env NODE_ENV=production yarn --cwd ./server start",
 		"server:build--dev": "cross-env NODE_ENV=development yarn --cwd ./server start--nodemon",
 		"development": "concurrently \"yarn run server:build--dev \" \"yarn run client:build--dev\"",
@@ -31,6 +34,27 @@
 		"prettier:all": "yarn run prettier:client && yarn run prettier:server"
 	},
 	"dependencies": {
-		"cross-env": "^7.0.3"
-	}
+		"cross-env": "^7.0.3",
+		"react-scripts": "^5.0.0",
+		"axios": "^0.25.0",
+		"date-fns": "^2.25.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-query": "^3.34.12",
+		"react-router-dom": "^6.2.1",
+		"sass": "^1.49.7"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"proxy": "http://localhost:2000"
 }
